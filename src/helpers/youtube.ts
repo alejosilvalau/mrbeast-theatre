@@ -1,18 +1,11 @@
-import "whatwg-fetch";
+// TODO: Make only fetch the video once, then get a random video that is different from the previous one
 
-export function fetchVideos(channelId: string) {
-	const url = `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=${channelId}`;
-	return fetch(url).then(
-		(response: {
-			ok: any;
-			json: () => any;
-			statusText: string | undefined;
-		}) => {
-			if (response.ok) {
-				return response.json();
-			} else {
-				throw new Error(response.statusText);
-			}
-		}
-	);
+export async function fetchVideos(playListId: string, apiKey: string) {
+	return await fetch(
+		`https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=${playListId}&maxResults=25&key=${apiKey}`
+	)
+		.then((data) => data.json())
+		.then((list) => list.items);
 }
+
+//

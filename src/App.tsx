@@ -1,8 +1,11 @@
 import mrBeastLogo from "./assets/Mr-Beast-Logo.png";
 import Button from "./components/Button";
 import "./App.css";
+import React from "react";
 
 function App() {
+	const [videos, setVideos] = React.useState([]);
+
 	return (
 		<>
 			<div>
@@ -13,7 +16,7 @@ function App() {
 					<img src={mrBeastLogo} className='logo' alt='Vite logo' />
 				</a>
 			</div>
-			<Button />
+			<Button videos={videos} setVideos={setVideos} />
 		</>
 	);
 }

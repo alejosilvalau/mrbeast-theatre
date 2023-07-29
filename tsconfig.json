@@ -4,7 +4,8 @@
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "types": [
-      "@types/whatwg-fetch"
+      "@types/whatwg-fetch",
+      "@types/node"
     ],
     "module": "ESNext",
     "skipLibCheck": true,

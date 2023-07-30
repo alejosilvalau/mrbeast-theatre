@@ -6,7 +6,7 @@ const Button: FC = ({ videos, setVideos }) => {
 	const handleClick = useCallback(() => {
 		fetchVideos(
 			"UCX6OQ3DkcsbYNE6H8uQQuVA",
-			"AIzaSyDAhQhFtDKV9m0kJDrrMFGENIrDnxQ2sss"
+			"" // put your api key here
 		).then((videos) => {
 			setVideos(videos);
 		});
